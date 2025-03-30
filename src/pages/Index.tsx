@@ -3,8 +3,17 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import ChatBot from '@/components/ChatBot';
 import { MessageSquare, ArrowRight, CheckCircle, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
+  // Function to scroll to the chatbot section
+  const scrollToChatbot = () => {
+    const chatbotElement = document.getElementById('chatbot-section');
+    if (chatbotElement) {
+      chatbotElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -19,10 +28,10 @@ const Index = () => {
               support, and engage in natural conversations 24/7.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2" onClick={scrollToChatbot}>
                 Try It Now <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" className="gap-2">
+              <Button size="lg" variant="outline" className="gap-2" onClick={scrollToChatbot}>
                 Learn More
               </Button>
             </div>
@@ -43,7 +52,7 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="flex-1 w-full max-w-md">
+          <div id="chatbot-section" className="flex-1 w-full max-w-md">
             <ChatBot />
           </div>
         </div>
@@ -93,7 +102,7 @@ const Index = () => {
         <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
           Try our chatbot today and experience the future of digital conversations. No sign-up required.
         </p>
-        <Button size="lg" className="gap-2">
+        <Button size="lg" className="gap-2" onClick={scrollToChatbot}>
           Get Started <ArrowRight className="h-4 w-4" />
         </Button>
       </section>
@@ -104,9 +113,9 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">© 2023 Chatbot Inc. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-muted-foreground hover:text-foreground text-sm">Privacy Policy</a>
-              <a href="#" className="text-muted-foreground hover:text-foreground text-sm">Terms of Service</a>
-              <a href="#" className="text-muted-foreground hover:text-foreground text-sm">Contact</a>
+              <Link to="#" className="text-muted-foreground hover:text-foreground text-sm">Privacy Policy</Link>
+              <Link to="#" className="text-muted-foreground hover:text-foreground text-sm">Terms of Service</Link>
+              <Link to="#" className="text-muted-foreground hover:text-foreground text-sm">Contact</Link>
             </div>
           </div>
         </div>
