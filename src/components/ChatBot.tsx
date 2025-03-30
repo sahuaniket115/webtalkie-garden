@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { SendHorizontal } from 'lucide-react';
 import ChatMessage, { MessageType } from './ChatMessage';
 import { v4 as uuidv4 } from 'uuid';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 
 const INITIAL_MESSAGES: MessageType[] = [
   {
